@@ -1,4 +1,4 @@
-//Example fetch using pokemonapi.co
+
 if(!localStorage.getItem("deckId")){
   updateDeckID();
 }
