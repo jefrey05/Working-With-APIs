@@ -5,7 +5,6 @@ for (const [key, value] of Object.entries(localStorage)) {
 }
 function getFetch() {
   const choice = document.querySelector("input").value;
-  //console.log(choice);
   const url = `https://openlibrary.org/isbn/${choice}.json`;
 
   fetch(url)
