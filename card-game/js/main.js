@@ -55,6 +55,11 @@ function drawTwo() {
           )
         ) {
           alert("Player1 has won this game good luck next time");
+          localStorage.removeItem("Player1wins");
+        localStorage.removeItem("Player2wins");
+
+        updateDeckID();
+
         } else if (
           Number(
             localStorage.getItem("Player1wins") <
@@ -62,6 +67,10 @@ function drawTwo() {
           )
         ) {
           alert("Player2 has won this game good luck next time");
+          localStorage.removeItem("Player1wins");
+        localStorage.removeItem("Player2wins");
+
+        updateDeckID();
         } else {
           ("Its a draw");
         }
