@@ -14,13 +14,17 @@ img{
   display: block;
   margin: 0 auto;
   margin-top: 2%;
+  width: 400px;
+  
 }
 
 button{
   display: block;;
   margin:0 auto;
   margin-top: 2%;
-
+  background: #008CBA;
+  color: white;
+  
 }
 h2{
   text-align: center;
