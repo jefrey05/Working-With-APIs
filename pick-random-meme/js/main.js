@@ -1,9 +1,11 @@
 document.querySelector("button").addEventListener("click", getMeme);
-if(!localStorage.getItem('current')){
-  localStorage.setItem('current','');
+document.querySelector("#getUrl").addEventListener("click", showMeURL);
+if (!localStorage.getItem("current")) {
+  localStorage.setItem("current", "");
 }
-document.querySelector("img").src = localStorage.getItem('current');
+document.querySelector("img").src = localStorage.getItem("current");
 function getMeme() {
+  document.querySelector("h3").style.display = "none";
   fetch("https://api.imgflip.com/get_memes")
     .then((res) => res.json()) // parse response as JSON
     .then((data) => {
@@ -18,4 +20,9 @@ function getMeme() {
     .catch((err) => {
       console.log(`error ${err}`);
     });
+}
+
+function showMeURL() {
+  document.querySelector("h3").innerText = localStorage.getItem("current");
+  document.querySelector("h3").style.display = "block";
 }
