@@ -1,11 +1,11 @@
 document.querySelector('button').addEventListener('click',getPlayer);
-
+let id ;
 function getPlayer(){
 
     fetch("https://api-football-standings.azharimm.site/leagues")
     .then((res) => res.json()) // parse response as JSON
     .then((data) => {
-      console.log(data);
+      //console.log(data);
       data.data.forEach(el=>{
         createRow(el.id,el.name)
         document.getElementById(el.id).addEventListener('click',getStandings)
@@ -19,19 +19,19 @@ function getPlayer(){
 }
 
 function createRow(choice, dataTitle) {
-  console.log(choice);
-  console.log(dataTitle);
+  //console.log(choice);
+  //console.log(dataTitle);
   var newRow = document.querySelector("table").insertRow();
   newRow.innerHTML = `<td id="${choice}">${choice}</td><td>${dataTitle}</td>`;
 }
 
 function getStandings(){
-  let id = this.id;
+  id = this.id;
   fetch(`https://api-football-standings.azharimm.site/leagues/${id}/standings?season=2020&sort=asc`)
     .then((res) => res.json()) // parse response as JSON
     .then((data) => {
-      console.log(data);
-     console.log(data.data.standings[0].team.name);
+     // console.log(data);
+     //console.log(data.data.standings[0].team.name);
      data.data.standings.forEach(el=>{
       let ol = document.querySelector('ol');
       let li = document.createElement('li');
@@ -50,5 +50,19 @@ function getStandings(){
 }
 
 function getTeamStats(){
-  alert(this.id)
+  //alert(this.id);
+  //alert(id);
+  fetch(`https://api-football-standings.azharimm.site/leagues/${id}/standings?season=2020&sort=asc`)
+    .then((res) => res.json()) // parse response as JSON
+    .then((data) => {
+      console.log(this.id)
+      console.log(data);
+      
+     let team = data.data.standings.filter(el=> el.team.name === this.id);
+     console.log(team)
+     console.log(`wins is ${team[0].stats[0].value}`)
+    })
+    .catch((err) => {
+      console.log(`error ${err}`);
+    });
 }
