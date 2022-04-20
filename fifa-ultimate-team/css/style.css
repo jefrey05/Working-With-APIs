@@ -46,7 +46,19 @@ tfoot {
   color: #fff;
 }
 table {
-  margin-top: 1%;
+  margin-top: 2%;
+}
+
+button{
+  display: block;
+}
+table,ol{
+  float: left;
+}
+
+ol{
+  margin-top: 2%;
+  margin-left: 20%;
 }
 
 /******************************************

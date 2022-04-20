@@ -32,14 +32,23 @@ function getStandings(){
     .then((data) => {
       console.log(data);
      console.log(data.data.standings[0].team.name);
-     let ul = document.querySelector('ul');
-     let li = document.createElement('li');
-     li.textContent = data.data.standings[0].team.name;
-     ul.appendChild(li)
+     data.data.standings.forEach(el=>{
+      let ol = document.querySelector('ol');
+      let li = document.createElement('li');
+      li.textContent = el.team.name;
+      li.setAttribute('id',el.team.name)
+      ol.appendChild(li)
+      document.getElementById(el.team.name).addEventListener('click',getTeamStats)
+     })
+    
       
     })
     .catch((err) => {
       console.log(`error ${err}`);
     });
 
+}
+
+function getTeamStats(){
+  alert(this.id)
 }
