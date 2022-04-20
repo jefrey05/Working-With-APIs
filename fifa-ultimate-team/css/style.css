@@ -36,6 +36,12 @@ header {
 footer {
 
 }
+div{
+     border: 2px solid red;
+     width: 20%;
+     height: 500px;
+     margin: 0 auto;
+}
 
 /******************************************
 /* ADDITIONAL STYLES
