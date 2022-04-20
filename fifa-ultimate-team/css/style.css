@@ -52,15 +52,17 @@ table {
 button{
   display: block;
 }
-table,ol{
+table,div{
   float: left;
 }
 
-ol{
-  margin-top: 2%;
-  margin-left: 20%;
+div{
+  margin-top: 1%;
+  margin-left: 18%;
 }
-
+h3{
+  margin-left: 5%;
+}
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/

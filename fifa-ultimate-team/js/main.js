@@ -29,7 +29,7 @@ function getStandings() {
   )
     .then((res) => res.json()) // parse response as JSON
     .then((data) => {
-      // console.log(data);
+       console.log(data);
       //console.log(data.data.standings[0].team.name);
       data.data.standings.forEach((el) => {
         let ol = document.querySelector("ol");
