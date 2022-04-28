@@ -9,7 +9,7 @@ function getFetch(){
   let pokeStore = []
   let pokeImg = []
   let poke1Abilities = [];
-  let poke2Ablities = [];
+  let poke2Abilities = [];
 
   fetch(url)
       .then(res => res.json()) // parse response as JSON
@@ -27,15 +27,15 @@ function getFetch(){
           pokeStore.push(data.types[0].type.name)
           pokeImg.push(data.sprites.front_shiny)
           data.abilities.forEach(data=>{
-            poke2Ablities.push(data.ability.name)
+            poke2Abilities.push(data.ability.name)
           })
           console.log(poke1Abilities);
           console.log(poke2Abilities)
-          if((pokeStore[0] === "fire" && pokeStore[1] === 'electric')){
+          
             document.querySelector('#pokeImg1').src = pokeImg[0]
             document.querySelector('#pokeImg2').src = pokeImg[1]
             document.querySelector('h2').innerText = " 2x > "
-          }
+          
         })
         .catch(err => {
             console.log(`error ${err}`)
