@@ -32,9 +32,10 @@ function getFetch(){
           console.log(poke1Abilities);
           console.log(poke2Abilities)
           createRow(poke1,poke2)
-          poke1Abilities.forEach(poke=>{
-            createRow(poke)
-          })
+          let max = Math.max(poke1Abilities.length,poke2Abilities.length);
+          for(let i = 0;i<max;i++){
+            !poke1Abilities[i]?createRow(" "):createRow(poke1Abilities[i])
+          }
 
 
       
@@ -42,7 +43,7 @@ function getFetch(){
           execute(poke2Abilities);
           let pikachu = document.getElementById('0');
           let td = document.createElement('td');
-          td.textContent = 'pikachu';
+          td.textContent = poke2;
           pikachu.parentNode.insertBefore(td,td.nextSibling)
             document.querySelector('#pokeImg1').src = pokeImg[0]
             document.querySelector('#pokeImg2').src = pokeImg[1]
@@ -79,8 +80,9 @@ function getFetch(){
           child.appendChild(td)
           index++;
         }
+    
       }
-
+      
 
       
 }
