@@ -10,7 +10,7 @@ function getFetch(){
   let pokeImg = []
   let poke1Abilities = [];
   let poke2Abilities = [];
-
+  let count = 0;
   fetch(url)
       .then(res => res.json()) // parse response as JSON
       .then(data => {
@@ -31,10 +31,22 @@ function getFetch(){
           })
           console.log(poke1Abilities);
           console.log(poke2Abilities)
-          
+          createRow(poke1,poke2)
+          poke1Abilities.forEach(poke=>{
+            createRow(poke)
+          })
+
+
+      
+
+          execute(poke2Abilities);
+          let pikachu = document.getElementById('0');
+          let td = document.createElement('td');
+          td.textContent = 'pikachu';
+          pikachu.parentNode.insertBefore(td,td.nextSibling)
             document.querySelector('#pokeImg1').src = pokeImg[0]
             document.querySelector('#pokeImg2').src = pokeImg[1]
-            document.querySelector('h2').innerText = " 2x > "
+            
           
         })
         .catch(err => {
@@ -47,6 +59,27 @@ function getFetch(){
           console.log(`error ${err}`)
       });
 
+      function createRow(poke1) {
+        //console.log(choice);
+        //console.log(dataTitle);
+        var newRow = document.querySelector("table").insertRow();
+        newRow.innerHTML = `<td id="${count}" >${poke1}</td>`;
+        count++;
+      }
+
+       
+      function execute(poke2){
+        let element = document.querySelector('thead');
+        let children = element.children;
+        let index = 0;
+        for(let i = 2;i<children.length;i++){
+          let child = children[i];
+          let td = document.createElement('td');
+          td.textContent = poke2[index];
+          child.appendChild(td)
+          index++;
+        }
+      }
 
 
       

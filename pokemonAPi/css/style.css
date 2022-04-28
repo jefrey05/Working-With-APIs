@@ -14,7 +14,37 @@ img{
   display: block;
   margin: 0 auto;
 }
+#table {
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: normal;
+  border: none;
+  border-collapse: collapse;
+  width: 20%;
+  max-width: 20%;
+  white-space: nowrap;
+  background-color: white;
+}
+#table td, .table th {
+  text-align: center;
+  padding: 8px;
+}
+#table td {
+  border-right: 1px solid #f8f8f8;
+  font-size: 12px;
+}
+#table thead th {
+  color: #ffffff;
+  background: #4FC3A1;
+}
+#table thead th:nth-child(odd) {
+  color: #ffffff;
+  background: #324960;
+}
 
+#table tr:nth-child(even) {
+  background: #F8F8F8;
+}
 
 /******************************************
 /* ADDITIONAL STYLES
