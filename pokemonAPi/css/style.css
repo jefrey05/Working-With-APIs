@@ -3,14 +3,14 @@
 /*******************************************/
 
 /* Box Model Hack */
-*{
+* {
   box-sizing: border-box;
 }
 
 /******************************************
 /* LAYOUT
 /*******************************************/
-img{
+img {
   display: block;
   margin: 0 auto;
 }
@@ -25,7 +25,8 @@ img{
   white-space: nowrap;
   background-color: white;
 }
-#table td, .table th {
+#table td,
+.table th {
   text-align: center;
   padding: 8px;
 }
@@ -35,7 +36,7 @@ img{
 }
 #table thead th {
   color: #ffffff;
-  background: #4FC3A1;
+  background: #4fc3a1;
 }
 #table thead th:nth-child(odd) {
   color: #ffffff;
@@ -43,9 +44,8 @@ img{
 }
 
 #table tr:nth-child(even) {
-  background: #F8F8F8;
+  background: #f8f8f8;
 }
-
 
 /******************************************
 /* ADDITIONAL STYLES
